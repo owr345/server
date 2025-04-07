@@ -66,6 +66,11 @@ io.on("connection", (socket) => {
     }
   });
 
+  socket.on("successfully", () => {
+    sendLogToClients(`User removed: ${successfully}`);
+    
+    });
+
   socket.on("disconnect", () => {
     console.log(`User disconnected: ${socket.id}`);
     for (let [userId, socketId] of users.entries()) {
