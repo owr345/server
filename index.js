@@ -68,7 +68,19 @@ io.on("connection", (socket) => {
 
   socket.on("successfully", (e) => {
     console.log(`User removed: ${e}`);
-    
+    if(!e){
+      socket.emit("message_status", {
+        status: "TRUE",
+        receiverId: receiverId,
+        timestamp: Date.now()
+      });
+    } else{
+      socket.emit("message_status", {
+        status: "FALSE",
+        receiverId: receiverId,
+        timestamp: Date.now()
+      });
+    }
     });
 
   socket.on("disconnect", () => {
