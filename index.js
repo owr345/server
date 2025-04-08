@@ -71,13 +71,11 @@ io.on("connection", (socket) => {
     if(!e){
       socket.emit("message_status", {
         status: "TRUE",
-        receiverId: receiverId,
         timestamp: Date.now()
       });
     } else{
       socket.emit("message_status", {
         status: "FALSE",
-        receiverId: receiverId,
         timestamp: Date.now()
       });
     }
