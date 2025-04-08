@@ -67,7 +67,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("successfully", (e) => {
-    sendLogToClients(`User removed: ${e}`);
+    console.log(`User removed: ${e}`);
     
     });
 
