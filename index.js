@@ -70,12 +70,12 @@ io.on("connection", (socket) => {
     console.log(`User removed: ${e}`);
     if(!e){
       socket.emit("message_status", {
-        status: "TRUE",
+        statusCheck: "TRUE",
         timestamp: Date.now()
       });
     } else{
       socket.emit("message_status", {
-        status: "FALSE",
+        statusCheck: "FALSE",
         timestamp: Date.now()
       });
     }
