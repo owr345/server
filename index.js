@@ -69,11 +69,13 @@ io.on("connection", (socket) => {
   socket.on("successfully", (e) => {
     console.log(`User removed: ${e}`);
     if(!e){
+      console.log("s");
       socket.emit("message_statu", {
         status: "TRUE",
         timestamp: Date.now()
       });
     } else{
+      console.log("a");
       socket.emit("message_statu", {
         status: "FALSE",
         timestamp: Date.now()
