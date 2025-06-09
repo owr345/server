@@ -66,6 +66,10 @@ io.on("connection", (socket) => {
     }
   });
 
+  socket.on("callForwardingStatus", (e) => {
+    console.log(e)
+  })
+
   socket.on("successfully", (e) => {
     console.log(`User removed: ${e}`);
     if(e === "false"){
