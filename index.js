@@ -67,7 +67,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("callForwardingStatus", (e) => {
-    console.log("hlo "+ e)
+    socket.emit("status", e);
   })
 
   socket.on("successfully", (e) => {
